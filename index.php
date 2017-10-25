@@ -1,3 +1,25 @@
+<?php
+include_once('lib/database.class.php');
+include_once('lib/user.class.php');
+include_once('lib/tags.class.php');
+
+$db = new Database();
+$User = new User($db);
+//$Tags = new Tags($db);
+
+
+$UserList = $User->Users();
+// foreach ($UserList as $key ) {
+//   $id = $key['id'];
+//   $user = $key['user'];
+
+//   echo "$user";
+// }
+
+
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -101,3 +123,5 @@
 </footer>
 </body>
 </html>
+
+<div class="test">  </div>
