@@ -144,7 +144,28 @@ $UserList = $User->Users();
 <script>
 $(document).ready(function() {
     $('.buttons').on('click', '.button', function() {
-    $(this).addClass('is-selected is-success').siblings().removeClass('is-selected is-success');
+
+    if($(this).attr('name') == "yes")
+    {
+      $(this).addClass('is-selected is-danger').siblings().attr('class','button');
+    }
+   
+     if($(this).attr('name') == "maybe")
+    {
+      $(this).addClass('is-selected is-warning').siblings().attr('class','button');
+    }
+
+     if($(this).attr('name') == "no")
+    {
+      $(this).addClass('is-selected is-info').siblings().attr('class','button');
+    }
+
+
+
+
+
+
+
     });
 });
 
