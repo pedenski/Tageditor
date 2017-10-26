@@ -1,6 +1,8 @@
 <?php 
 
 
+
+
 include_once('lib/database.class.php');
 include_once('lib/user.class.php');
 include_once('lib/tags.class.php');
@@ -14,6 +16,8 @@ $a = $Tags->tag($UserList);
 print_r($a);
 
 
+
+echo $_POST['sev'];
 
 
 

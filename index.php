@@ -35,7 +35,8 @@ $UserList = $User->Users();
    
     <!--TAG EDITOR CSS -->  
     <link rel="stylesheet" href="style/jquery.tag-editor.css">  
-
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="style/fontawesome/css/font-awesome.min.css">
   </head>
   <body>
   <section class="section">
@@ -50,6 +51,19 @@ $UserList = $User->Users();
     </thead>
 
     <tbody>
+    <tr>  
+      <td colspan="3">
+      <div class="buttons has-addons">
+        <span name="yes" class="button">Yes</span>
+        <span name="maybe" class="button">Maybe</span>
+        <span name="no" class="button">No</span>
+      </div>
+      </td>
+
+    </tr>
+
+
+
       <tr>
         <td colspan="3">
           <div style="margin:0 0 1.2em">
@@ -94,14 +108,20 @@ $UserList = $User->Users();
  </script> 
 
 
+
+
  <!--SUBMIT AJAX FORM DAT  --> 
+  
+
+
   <script>
     $(document).ready(function() {
         // process the form
         $('form').submit(function(event) {
                                  
             var formData = {
-               'tag'     : $('#demo3').tagEditor('getTags')[0].tags   
+               'tag'     : $('#demo3').tagEditor('getTags')[0].tags,
+               'sev'     : $('.button.is-selected').attr('name')
             };
                
             // process the form
@@ -120,8 +140,17 @@ $UserList = $User->Users();
         });
     });
   </script>
+
+<script>
+$(document).ready(function() {
+    $('.buttons').on('click', '.button', function() {
+    $(this).addClass('is-selected is-success').siblings().removeClass('is-selected is-success');
+    });
+});
+
+</script>
+
 </footer>
 </body>
 </html>
 
-<div class="test">  </div>
